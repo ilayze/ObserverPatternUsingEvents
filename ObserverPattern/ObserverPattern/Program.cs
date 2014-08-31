@@ -10,6 +10,12 @@ namespace ObserverPattern
     {
         static void Main(string[] args)
         {
+            Subject s = new Subject();
+            Observer1 observer1 = new Observer1(s);
+
+            s.SomeMethodThatRaiseTheEvent();
+
+            Console.ReadKey();
         }
     }
 }
