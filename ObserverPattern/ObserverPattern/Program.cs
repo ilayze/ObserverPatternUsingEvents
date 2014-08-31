@@ -11,8 +11,9 @@ namespace ObserverPattern
         static void Main(string[] args)
         {
             Subject s = new Subject();
-            Observer1 observer1 = new Observer1(s);
+            Observer1 observer1 = new Observer1();
 
+            s.myEvent += new Subject.SubjectHandler(observer1.subjectHandler);
             s.SomeMethodThatRaiseTheEvent();
 
             Console.ReadKey();
